@@ -1,0 +1,20 @@
+{
+  "item.healingupgrade.healing_upgrade": "Healing Upgrade",
+  "item.healingupgrade.healing_upgrade.tooltip": "Heals your Pokémon party from the backpack, like a Healing Machine",
+  "gui.healingupgrade.upgrades.healing": "Healing",
+  "gui.healingupgrade.upgrades.healing.tooltip": "Healing Upgrade",
+  "gui.healingupgrade.button.heal": "Heal party",
+  "gui.healingupgrade.button.heal.tooltip": "Heals every Pokémon in your party",
+  "gui.healingupgrade.button.cooldown": "Wait %s",
+  "gui.healingupgrade.button.cooldown.tooltip": "Time left until you can heal again",
+  "healingupgrade.message.healed": "Your Pokémon party has been healed.",
+  "healingupgrade.message.not_owner": "You can only heal from a backpack you are carrying.",
+  "healingupgrade.message.in_battle": "You can't heal your party during a battle.",
+  "healingupgrade.message.machine_in_use": "You are already healing at a Healing Machine.",
+  "healingupgrade.message.no_pokemon": "You have no Pokémon in your party.",
+  "healingupgrade.message.already_healed": "Your party is already fully healed.",
+  "healingupgrade.message.cooldown": "Wait %s before healing again.",
+  "healingupgrade.message.missing_cost": "You need %s x %s in the backpack to heal.",
+  "healingupgrade.message.bad_config": "The Healing Upgrade is misconfigured. Please tell an admin.",
+  "healingupgrade.command.reloaded": "Cobblemon Healing Upgrade config reloaded."
+}

@@ -1,0 +1,20 @@
+{
+  "item.healingupgrade.healing_upgrade": "Mejora de curación",
+  "item.healingupgrade.healing_upgrade.tooltip": "Cura tu equipo Pokémon desde la mochila, como una máquina de curación",
+  "gui.healingupgrade.upgrades.healing": "Curación",
+  "gui.healingupgrade.upgrades.healing.tooltip": "Mejora de curación",
+  "gui.healingupgrade.button.heal": "Curar equipo",
+  "gui.healingupgrade.button.heal.tooltip": "Cura a todos los Pokémon de tu equipo",
+  "gui.healingupgrade.button.cooldown": "Espera %s",
+  "gui.healingupgrade.button.cooldown.tooltip": "Tiempo restante hasta poder volver a curar",
+  "healingupgrade.message.healed": "Tu equipo Pokémon ha sido curado.",
+  "healingupgrade.message.not_owner": "Solo puedes curar desde una mochila que lleves tú.",
+  "healingupgrade.message.in_battle": "No puedes curar a tu equipo durante un combate.",
+  "healingupgrade.message.machine_in_use": "Ya te estás curando en una máquina de curación.",
+  "healingupgrade.message.no_pokemon": "No tienes Pokémon en tu equipo.",
+  "healingupgrade.message.already_healed": "Tu equipo ya está completamente curado.",
+  "healingupgrade.message.cooldown": "Espera %s antes de volver a curar.",
+  "healingupgrade.message.missing_cost": "Necesitas %s x %s en la mochila para curar.",
+  "healingupgrade.message.bad_config": "La mejora de curación está mal configurada. Avisa a un administrador.",
+  "healingupgrade.command.reloaded": "Configuración de Cobblemon Healing Upgrade recargada."
+}

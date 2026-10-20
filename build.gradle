@@ -1,0 +1,63 @@
+plugins {
+	id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = 'sophisticatedbackpacks-cobblemon-healing-upgrade'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	// Mojang mappings: los mismos nombres que usan Sophisticated Core/Backpacks y Cobblemon en su codigo fuente.
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// Jars exactos del modpack (libs/). Solo compilacion: en el servidor ya estan instalados.
+	modCompileOnly files('libs/sophisticatedcore-1.21.1-1.2.9.20.164.jar')
+	modCompileOnly files('libs/sophisticatedbackpacks-1.21.1-3.23.4.3.106.jar')
+	modCompileOnly files('libs/Cobblemon-fabric-1.7.1+1.21.1.jar')
+	modCompileOnly files('libs/ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar')
+	// porting_lib y Team Reborn Energy van incluidos (jar-in-jar) dentro de sophisticatedcore; extraidos
+	// a libs/nested solo para que el compilador resuelva los supertipos (ItemStackHandler, etc.).
+	fileTree(dir: 'libs/nested', include: '*.jar', exclude: 'mixinextras*').each { modCompileOnly files(it) }
+	compileOnly "org.jetbrains.kotlin:kotlin-stdlib:${project.kotlin_stdlib_version}"
+	// Nota: no hay modLocalRuntime para runServer/runClient. Cobblemon no arranca en desarrollo con
+	// mappings de Mojang (su metadata Kotlin conserva nombres intermediary). Para probar, ver README:
+	// test-server/ con los jars reales del modpack.
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 21
+	it.options.encoding = 'UTF-8'
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+	def projectName = project.name
+	inputs.property "projectName", projectName
+
+	from("LICENSE") {
+		rename { "${it}_$projectName" }
+	}
+}

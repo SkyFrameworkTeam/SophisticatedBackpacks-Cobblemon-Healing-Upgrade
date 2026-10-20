@@ -1,0 +1,10 @@
+build/
+.gradle/
+run/
+*.log
+.idea/
+*.iml
+.vscode/
+
+# Jars de terceros (Cobblemon, Sophisticated...): no se redistribuyen. Ver README > Compilar.
+libs/**/*.jar
